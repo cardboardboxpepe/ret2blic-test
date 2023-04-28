@@ -15,3 +15,20 @@ Or
 $ ./launcher ./exp4 ./sys.bin
 ```
 
+## About
+
+Basically, we're trying to overwrite the `rip` address to point to
+functions to libc, namely the `system(const char*)` function.
+
+We need:
+
+- the address of `system()`
+- the address of the command we want to execute (in this case `/bin/sh`)
+- (optional) an address for `system()` to return to
+- (optional) an address to align the stack so the program doesn't segfault
+
+All of these addresses are in `tools.py` however the address to align
+the stack could change due to ASLR or other factors.
+
+This is why there's a script to disable this `disable_aslr`.
+
