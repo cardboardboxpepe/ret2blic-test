@@ -6,13 +6,13 @@
 4. Run the program in a couple of ways:
 
 ```sh
-$ (cat exp4; cat) | ./sys.bin
+$ (cat exp4; cat) | ./ret2libc.bin
 ```
 
 Or
 
 ```sh
-$ ./launcher ./exp4 ./sys.bin
+$ ./launcher ./exp4 ./ret2libc.bin
 ```
 
 ## About
