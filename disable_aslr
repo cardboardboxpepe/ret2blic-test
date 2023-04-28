@@ -1,4 +1,5 @@
 #!/bin/sh
 su -c "echo 0 > /proc/sys/kernel/randomize_va_space" root
+echo "ASLR: $(cat /proc/sys/kernel/randomize_va_space)"
 exit 0
 
