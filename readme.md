@@ -32,3 +32,12 @@ the stack could change due to ASLR or other factors.
 
 This is why there's a script to disable this `disable_aslr`.
 
+Here's how you find the addresses of the functions using `gdb`,
+within `gdb` execute the following commands:
+
+1. `b main` to break at the `main` function
+2. `r` to run the program
+3. `p system` to print the address of system
+4. `p exit` to print the address of exit
+5. `find "/bin/sh"` to print the address where the string `/bin/sh` is stored (should be within libc)
+
